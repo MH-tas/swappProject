@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "exiZJb5DTuc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\90533\\Documents\\GitHub\\Swapp\\swappCCC\\CiscoSNMPMonitor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\90533\\.nuget\\packages\\lextm.sharpsnmplib\\12.5.2\\lextm.sharpsnmplib.12.5.2.nupkg.sha512",
+    "C:\\Users\\90533\\.nuget\\packages\\system.windows.forms.datavisualization\\1.0.0-prerelease.20110.1\\system.windows.forms.datavisualization.1.0.0-prerelease.20110.1.nupkg.sha512"
+  ],
+  "logs": []
+}

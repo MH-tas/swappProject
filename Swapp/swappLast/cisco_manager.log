@@ -1,0 +1,2739 @@
+2025-06-20 13:54:08,598 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 13:54:38,952 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 13:54:38,984 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 13:54:39,578 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 13:54:42,034 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 13:54:44,469 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:55:13,874 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/2', 'shutdown']
+2025-06-20 13:55:24,017 - cisco_manager - ERROR - Configuration failed: 
+
+Pattern not detected: '[>#]' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 13:55:24,018 - cisco_manager - ERROR - Failed to disable interface Gi1/0/2: Configuration failed: 
+
+Pattern not detected: '[>#]' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 13:55:28,489 - cisco_manager - INFO - Disconnected from device
+2025-06-20 13:55:28,490 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 13:55:32,105 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 13:55:53,134 - cisco_manager - ERROR - Connection timeout to 192.168.20.1: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 192.168.20.1:22
+
+
+2025-06-20 13:56:40,324 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 13:57:01,971 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 13:57:38,764 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 13:57:42,963 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 13:57:44,987 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 13:57:45,483 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 13:57:47,969 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 13:57:50,309 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:57:57,629 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/2', 'no shutdown']
+2025-06-20 13:57:57,803 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 13:57:57,803 - cisco_manager - INFO - Interface Gi1/0/2 enabled
+2025-06-20 13:58:01,229 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:58:03,760 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:58:23,771 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/11', 'shutdown']
+2025-06-20 13:58:23,946 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 13:58:23,946 - cisco_manager - INFO - Interface Gi1/0/11 disabled
+2025-06-20 13:58:27,230 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:58:29,658 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:58:32,280 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/11', 'no shutdown']
+2025-06-20 13:58:32,449 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 13:58:32,449 - cisco_manager - INFO - Interface Gi1/0/11 enabled
+2025-06-20 13:58:35,814 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:59:36,285 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:59:38,828 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/5', 'shutdown']
+2025-06-20 13:59:39,007 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 13:59:39,007 - cisco_manager - INFO - Interface Gi1/0/5 disabled
+2025-06-20 13:59:41,740 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 13:59:45,336 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/9', 'shutdown']
+2025-06-20 13:59:50,988 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 13:59:50,988 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:01,320 - cisco_manager - ERROR - Configuration failed: 
+
+Pattern not detected: 'shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:01,320 - cisco_manager - ERROR - Failed to disable interface Gi1/0/9: Configuration failed: 
+
+Pattern not detected: 'shutdown' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:02,447 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:02,447 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:05,242 - cisco_manager - INFO - Retrieved 1 interfaces
+2025-06-20 14:00:14,266 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:14,269 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:14,270 - cisco_manager - INFO - Retrieved 1 interfaces
+2025-06-20 14:00:14,281 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:14,283 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:00:14,563 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:00:14,565 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:00:14,763 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: Socket is closed
+2025-06-20 14:00:14,764 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: Socket is closed
+2025-06-20 14:00:14,765 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:00:15,233 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:15,233 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:15,234 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:00:15,234 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:00:15,234 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:00:15,550 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:00:15,575 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:00:16,059 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:00:16,075 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:16,075 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:16,076 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:00:16,076 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:00:16,078 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:00:17,320 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:17,320 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:17,321 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:00:17,321 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:00:17,322 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:00:17,709 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:17,710 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:17,711 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:00:17,712 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:00:17,713 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:00:18,474 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:00:18,629 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:18,629 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:00:19,768 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: Socket is closed
+2025-06-20 14:00:19,768 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: Socket is closed
+2025-06-20 14:00:19,768 - cisco_manager - INFO - Retrieved 1 interfaces
+2025-06-20 14:00:22,981 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:00:23,419 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:00:26,791 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:00:28,969 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/9', 'no shutdown']
+2025-06-20 14:00:29,134 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:00:29,134 - cisco_manager - INFO - Interface Gi1/0/9 enabled
+2025-06-20 14:00:32,990 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:00:36,094 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/5', 'no shutdown']
+2025-06-20 14:00:36,264 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:00:36,264 - cisco_manager - INFO - Interface Gi1/0/5 enabled
+2025-06-20 14:00:40,010 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:00:51,333 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:03:00,719 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/8', 'switchport mode access', 'switchport access vlan 20']
+2025-06-20 14:03:00,949 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:03:00,949 - cisco_manager - INFO - VLAN 20 set for interface Gi1/0/8
+2025-06-20 14:03:04,317 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:03:11,888 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/8', 'switchport mode access', 'switchport access vlan 1']
+2025-06-20 14:03:12,096 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:03:12,096 - cisco_manager - INFO - VLAN 1 set for interface Gi1/0/8
+2025-06-20 14:03:15,395 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:03:34,782 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:03:34,784 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:03:37,144 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:03:44,001 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:03:44,034 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:03:44,522 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:03:46,967 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:03:58,439 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:03:58,441 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:06,727 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:04:06,728 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:04:07,305 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:07,305 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:07,306 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:04:07,306 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:04:07,307 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:07,669 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:04:07,696 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:04:08,188 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:04:08,496 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:08,497 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:08,497 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:04:08,497 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:04:08,497 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:09,103 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:09,104 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:09,104 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:04:09,119 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:09,119 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:09,119 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:04:09,119 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:04:09,119 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:09,338 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:09,339 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:09,340 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:04:09,341 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:10,259 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:10,260 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:11,054 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:04:11,725 - cisco_manager - ERROR - Command 'show ip interface brief' failed: Socket is closed
+2025-06-20 14:04:11,725 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: Socket is closed
+2025-06-20 14:04:13,494 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:13,495 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:13,980 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:04:22,399 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:22,399 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:22,400 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:23,303 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:23,304 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:29,738 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:04:32,037 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:32,039 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:35,291 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:04:36,122 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:36,122 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:36,123 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:04:38,380 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:04:47,637 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:47,639 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:04:47,640 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:04:50,720 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:04:50,721 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:04:50,752 - cisco_manager - ERROR - Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:50,752 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: Socket is closed
+2025-06-20 14:04:50,753 - cisco_manager - WARNING - Failed to get interface brief: Device not connected
+2025-06-20 14:04:50,753 - cisco_manager - WARNING - Could not enrich switchport info: Device not connected
+2025-06-20 14:04:50,753 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:04:53,031 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:04:59,400 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:04:59,426 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:04:59,919 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:05:02,380 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:05:13,859 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:13,859 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:15,945 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:15,945 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:25,298 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:25,300 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:25,627 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:25,628 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:28,492 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:28,494 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:30,551 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:05:32,991 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:05:41,379 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:41,379 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:43,287 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:05:43,457 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:43,458 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:46,969 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:46,969 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:54,075 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:54,075 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:56,022 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:05:56,023 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:05,022 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:05,022 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:05,521 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:05,522 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:05,523 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:06:08,139 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:08,140 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:11,151 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:06:16,590 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:16,590 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:18,837 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:18,837 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:18,838 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:06:19,652 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:19,652 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:23,514 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:23,514 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:23,516 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:06:29,529 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:29,530 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:30,511 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:30,511 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:34,681 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:34,681 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:35,088 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:35,088 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:39,326 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:06:40,216 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:40,216 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:53,281 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:53,283 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:54,483 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:54,485 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:56,281 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:56,282 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:57,486 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:57,486 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:57,487 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:06:57,656 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:57,656 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:57,658 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:06:59,377 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:06:59,377 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:04,220 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:04,220 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:05,146 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:05,146 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:05,567 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:05,567 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:06,518 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:06,518 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:08,598 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:08,601 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:08,722 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:08,724 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:10,746 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:10,748 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:11,335 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:11,337 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:11,338 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:14,284 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:14,286 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:14,751 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:14,751 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:14,752 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:17,948 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:17,949 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:21,444 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:21,445 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:22,555 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:22,555 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:24,636 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:24,637 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:26,531 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:26,531 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:26,531 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:28,677 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:28,678 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:31,148 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:31,150 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,414 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,417 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,663 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,665 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,885 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,885 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:32,886 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:34,741 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:34,743 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:38,344 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:38,344 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:38,563 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:38,564 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:39,316 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:39,317 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:39,517 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:39,517 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:40,948 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:40,950 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:40,950 - cisco_manager - INFO - Retrieved 8 interfaces
+2025-06-20 14:07:42,074 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:42,075 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:42,075 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:43,292 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:43,294 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:43,295 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:44,896 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:44,898 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:45,501 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:45,504 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:45,506 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:47,451 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:47,453 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:47,454 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:47,560 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:47,561 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:49,010 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:49,012 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:52,355 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:52,356 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:53,435 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:53,436 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:54,640 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:54,640 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:54,641 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:07:55,893 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:55,894 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:56,454 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:56,455 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,156 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,157 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,374 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,375 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,405 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:07:57,405 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:00,133 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:00,133 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:01,215 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:01,216 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:01,216 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:08:01,715 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:01,715 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:05,415 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:05,416 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:06,555 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:06,556 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:06,788 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:06,788 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:06,789 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:08:08,131 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:08,131 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:08,132 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:08,132 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:08,132 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:08:08,398 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:08,399 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:10,118 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:10,119 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:11,414 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:11,414 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:11,555 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:11,556 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:13,183 - cisco_manager - ERROR - Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:13,184 - cisco_manager - WARNING - Failed to get interface brief: Command 'show ip interface brief' failed: 
+
+Pattern not detected: 'show\\ ip\\ interface\\ brief' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:14,516 - cisco_manager - ERROR - Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:14,517 - cisco_manager - WARNING - Failed to get interface status: Command 'show interfaces status' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ status' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:19,236 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:19,236 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:08:19,237 - cisco_manager - INFO - Retrieved 0 interfaces
+2025-06-20 14:08:20,159 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:08:20,160 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:08:22,592 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:08:27,131 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:08:27,153 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:08:27,644 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:08:30,062 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:08:33,378 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:08:33,378 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:08:35,694 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:08:39,282 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:08:39,390 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/7', 'shutdown']
+2025-06-20 14:08:39,532 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:08:39,532 - cisco_manager - INFO - Interface Gi1/0/7 disabled
+2025-06-20 14:08:42,164 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:08:44,923 - cisco_manager - INFO - Retrieved 8 interfaces
+2025-06-20 14:08:47,125 - cisco_manager - INFO - Retrieved 9 interfaces
+2025-06-20 14:08:49,128 - cisco_manager - INFO - Retrieved 57 interfaces
+2025-06-20 14:08:53,311 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:08:54,241 - cisco_manager - INFO - Retrieved 7 interfaces
+2025-06-20 14:08:57,637 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:03,031 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:09:03,032 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:03,282 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:04,240 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:05,241 - cisco_manager - INFO - Retrieved 7 interfaces
+2025-06-20 14:09:06,567 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:07,031 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:09:07,031 - cisco_manager - INFO - Retrieved 61 interfaces
+2025-06-20 14:09:28,499 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:09:28,500 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:28,593 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:29,870 - cisco_manager - INFO - Retrieved 61 interfaces
+2025-06-20 14:09:30,895 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:34,600 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:35,503 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:36,391 - cisco_manager - INFO - Retrieved 7 interfaces
+2025-06-20 14:09:37,281 - cisco_manager - INFO - Retrieved 9 interfaces
+2025-06-20 14:09:41,049 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:09:44,507 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:01,633 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:02,149 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:03,917 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:10:03,917 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:13,916 - cisco_manager - ERROR - Command 'show interfaces switchport' failed: 
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:10:13,918 - cisco_manager - WARNING - Could not enrich switchport info: Command 'show interfaces switchport' failed: 
+Pattern not detected: 'show\\ interfaces\\ switchport' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+2025-06-20 14:10:13,919 - cisco_manager - INFO - Retrieved 7 interfaces
+2025-06-20 14:10:18,515 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:19,200 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:10:19,201 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:19,421 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:10:21,948 - cisco_manager - INFO - Retrieved 8 interfaces
+2025-06-20 14:10:22,840 - cisco_manager - INFO - Retrieved 56 interfaces
+2025-06-20 14:10:24,075 - cisco_manager - INFO - Retrieved 8 interfaces
+2025-06-20 14:10:24,311 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:10:24,311 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:10:41,862 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:10:47,612 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:10:47,633 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:10:48,130 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:11:00,179 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:11:32,117 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:11:32,117 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:11:46,837 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:11:48,712 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:11:51,434 - cisco_manager - INFO - Retrieved 120 interfaces
+2025-06-20 14:11:58,563 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:00,144 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:00,659 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:02,534 - cisco_manager - INFO - Retrieved 61 interfaces
+2025-06-20 14:12:04,339 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:12:04,340 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:06,336 - cisco_manager - INFO - Sending config commands: ['interface Gi1/0/7', 'no shutdown']
+2025-06-20 14:12:08,237 - cisco_manager - INFO - Retrieved 114 interfaces
+2025-06-20 14:12:08,927 - cisco_manager - INFO - Configuration commands sent successfully
+2025-06-20 14:12:08,927 - cisco_manager - INFO - Interface Gi1/0/7 enabled
+2025-06-20 14:12:11,221 - cisco_manager - INFO - Retrieved 62 interfaces
+2025-06-20 14:12:13,237 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:42,896 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:45,651 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:12:54,110 - cisco_manager - INFO - Disconnected from device
+2025-06-20 14:12:54,111 - cisco_manager - ERROR - Error triggering callback for disconnected: CiscoGUI.on_disconnected() takes 1 positional argument but 2 were given
+2025-06-20 14:13:12,203 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:13:18,965 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:13:18,991 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:13:19,485 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:13:32,013 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:13:34,904 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:42,868 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:13:47,731 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:48,762 - cisco_manager - WARNING - Output too short or empty from 'show interfaces status'
+2025-06-20 14:13:50,751 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:51,236 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:52,250 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:52,705 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:13:53,832 - cisco_manager - INFO - Successfully parsed 53 interfaces from 'show ip interface brief'
+2025-06-20 14:13:55,170 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:13:57,177 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:13:58,078 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:13:59,060 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:13:59,312 - cisco_manager - INFO - Successfully parsed 0 interfaces from 'show interfaces status'
+2025-06-20 14:14:12,812 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:21,340 - cisco_manager - INFO - CiscoManager initialized
+2025-06-20 14:14:25,779 - cisco_manager - INFO - Attempting to connect to 192.168.20.1:22
+2025-06-20 14:14:25,800 - paramiko.transport - INFO - Connected (version 2.0, client Cisco-1.25)
+2025-06-20 14:14:26,298 - paramiko.transport - INFO - Authentication (password) successful!
+2025-06-20 14:14:38,867 - cisco_manager - INFO - Successfully connected to 192.168.20.1
+2025-06-20 14:14:41,730 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:46,512 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:47,737 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:54,347 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:14:54,347 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:14:54,504 - cisco_manager - INFO - Successfully parsed 0 interfaces from 'show interfaces status'
+2025-06-20 14:14:57,093 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:57,583 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:59,406 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:14:59,793 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:01,308 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:01,354 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:01,621 - cisco_manager - INFO - Successfully parsed 53 interfaces from 'show ip interface brief'
+2025-06-20 14:15:02,929 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:04,209 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:05,102 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:15:05,104 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:06,593 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:07,234 - cisco_manager - INFO - Successfully parsed 0 interfaces from 'show interfaces status'
+2025-06-20 14:15:07,329 - cisco_manager - INFO - Successfully parsed 0 interfaces from 'show interfaces status'
+2025-06-20 14:15:07,359 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:08,267 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:15:08,267 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:12,589 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:14,557 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:16,586 - cisco_manager - INFO - Successfully parsed 0 interfaces from 'show ip interface brief'
+2025-06-20 14:15:17,071 - cisco_manager - WARNING - Could not enrich switchport info: list index out of range
+2025-06-20 14:15:17,072 - cisco_manager - INFO - Retrieved 52 interfaces
+2025-06-20 14:15:22,643 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:25,089 - cisco_manager - WARNING - Output too short or empty from 'show interfaces status'
+2025-06-20 14:15:25,246 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:26,885 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'
+2025-06-20 14:15:35,363 - cisco_manager - INFO - Retrieved 53 interfaces
+2025-06-20 14:15:35,656 - cisco_manager - INFO - Successfully parsed 52 interfaces from 'show interfaces status'

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CiscoSNMPMonitor/1.0.0": {
+        "dependencies": {
+          "Lextm.SharpSnmpLib": "12.5.2"
+        },
+        "runtime": {
+          "CiscoSNMPMonitor.dll": {}
+        }
+      },
+      "Lextm.SharpSnmpLib/12.5.2": {
+        "runtime": {
+          "lib/net6.0/SharpSnmpLib.dll": {
+            "assemblyVersion": "12.5.2.0",
+            "fileVersion": "12.5.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CiscoSNMPMonitor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lextm.SharpSnmpLib/12.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rWPyrB7klKxbuM/2wAQBgFk71XpERJt6uSRI27tCpMePidqbRD5whfFCXMeO0MlhUwqBmTZn7PoL6YnQLdZy1Q==",
+      "path": "lextm.sharpsnmplib/12.5.2",
+      "hashPath": "lextm.sharpsnmplib.12.5.2.nupkg.sha512"
+    }
+  }
+}

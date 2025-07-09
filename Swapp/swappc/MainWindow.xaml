@@ -1,0 +1,998 @@
+<Window x:Class="SwappC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SwappC - SSH Client" Height="720" Width="1400"
+        MinHeight="500" MinWidth="1200"
+        WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <!-- MODERN ANIMATED BUTTON STYLE -->
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="Margin" Value="8"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="8"
+                                RenderTransformOrigin="0.5,0.5">
+                            <Border.RenderTransform>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Border.RenderTransform>
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" Direction="270" ShadowDepth="3" Opacity="0.3" BlurRadius="8"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="border" 
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                                                           To="1.05" Duration="0:0:0.2"/>
+                                            <DoubleAnimation Storyboard.TargetName="border" 
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                                                           To="1.05" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="border" 
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" 
+                                                           To="1.0" Duration="0:0:0.2"/>
+                                            <DoubleAnimation Storyboard.TargetName="border" 
+                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" 
+                                                           To="1.0" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- CONNECT BUTTON STYLE -->
+        <Style x:Key="ConnectButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#39B183" Offset="0"/>
+                        <GradientStop Color="#2E8B5E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <!-- DISCONNECT BUTTON STYLE -->
+        <Style x:Key="DisconnectButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#F44336" Offset="0"/>
+                        <GradientStop Color="#D32F2F" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+
+        <!-- SWITCH MANAGER BUTTON STYLE -->
+        <Style x:Key="SwitchButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="#4999E9" Offset="0"/>
+                        <GradientStop Color="#3D7BD6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <!-- MODERN TEXTBOX STYLE -->
+        <Style TargetType="TextBox">
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#2196F3"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- MODERN PASSWORDBOX STYLE -->
+        <Style TargetType="PasswordBox">
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="6">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#2196F3"/>
+                                <Setter TargetName="border" Property="BorderThickness" Value="2"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <!-- MODERN LABEL STYLE -->
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="5,8,5,2"/>
+            <Setter Property="Foreground" Value="#424242"/>
+        </Style>
+
+        <!-- CARD ANIMATION -->
+        <Storyboard x:Key="CardFadeIn">
+            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.8"/>
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" 
+                           From="20" To="0" Duration="0:0:0.6"/>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#F8F9FF" Offset="0"/>
+                <GradientStop Color="#E8F5E8" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- ANIMATED HEADER -->
+        <Border Grid.Row="0" Padding="20">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#4999E9" Offset="0"/>
+                    <GradientStop Color="#39B183" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect Color="Black" Direction="270" ShadowDepth="4" Opacity="0.3" BlurRadius="10"/>
+            </Border.Effect>
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock Text="SwappC" 
+                           FontSize="28" FontWeight="Bold" 
+                           Foreground="White" HorizontalAlignment="Center"
+                           Margin="0,0,0,5">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Black" Direction="270" ShadowDepth="2" Opacity="0.5" BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock Text="Professional Network Switch Manager" 
+                           FontSize="14" FontWeight="Normal" 
+                           Foreground="#E8EAF6" HorizontalAlignment="Center"
+                           Opacity="0.9"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Main Content -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- MODERN CONNECTION PANEL -->
+            <Border Grid.Column="0" CornerRadius="15" 
+                    Background="White" Padding="25" Margin="0,0,15,0"
+                    Opacity="0">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="20"/>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="270" ShadowDepth="5" Opacity="0.15" BlurRadius="15"/>
+                </Border.Effect>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard Storyboard="{StaticResource CardFadeIn}"/>
+                    </EventTrigger>
+                </Border.Triggers>
+                <StackPanel>
+                    <!-- PANEL HEADER -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Ellipse Width="12" Height="12" Fill="#4CAF50" Margin="0,0,8,0"/>
+                        <TextBlock Text="SSH Connection" FontSize="18" FontWeight="Bold" 
+                                   Foreground="#1A237E" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <!-- INPUT FIELDS -->
+                    <Label Content="🌐 Host Address:"/>
+                    <TextBox x:Name="txtHost" Text="192.168.20.1"/>
+                    
+                    <Label Content="🔌 Port Number:"/>
+                    <TextBox x:Name="txtPort" Text="22"/>
+                    
+                    <Label Content="👤 Username:"/>
+                    <TextBox x:Name="txtUsername"/>
+                    
+                    <Label Content="🔐 Password:"/>
+                    <PasswordBox x:Name="txtPassword" Margin="5"/>
+                    
+                    <!-- ACTION BUTTONS -->
+                    <Button x:Name="btnConnect" Content="🚀 Connect" 
+                            Click="BtnConnect_Click" Margin="5,20,5,5"
+                            Style="{StaticResource ConnectButton}"/>
+                    <Button x:Name="btnDisconnect" Content="⛔ Disconnect" 
+                            Click="BtnDisconnect_Click" IsEnabled="False"
+                            Style="{StaticResource DisconnectButton}"/>
+                    
+                    <!-- SEPARATOR -->
+                    <Rectangle Height="2" Fill="#E0E0E0" Margin="10,15" 
+                               RadiusX="1" RadiusY="1"/>
+                    
+                    <!-- SWITCH MANAGER BUTTON -->
+                    <Button x:Name="btnSwitchManager" Content="🔧 Switch Port Manager" 
+                            Click="BtnSwitchManager_Click" 
+                            Style="{StaticResource SwitchButton}"
+                            Margin="5,10,5,5"/>
+                    
+                    <!-- SWITCH INFO BUTTON -->
+                    <Button x:Name="btnSwitchInfo" Content="📊 Switch Info" 
+                            Click="BtnSwitchInfo_Click" 
+                            Style="{StaticResource SwitchButton}"
+                            Margin="5,5,5,5"/>
+                </StackPanel>
+            </Border>
+            
+            <!-- MODERN OUTPUT PANEL -->
+            <Border Grid.Column="1" CornerRadius="15" 
+                    Background="White" Padding="25" Margin="10,0"
+                    Opacity="0">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="20"/>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="270" ShadowDepth="5" Opacity="0.15" BlurRadius="15"/>
+                </Border.Effect>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1" BeginTime="0:0:0.3"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" 
+                                               From="20" To="0" Duration="0:0:0.8" BeginTime="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- TERMINAL HEADER -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+                        <Ellipse Width="12" Height="12" Fill="#4CAF50" Margin="0,0,5,0"/>
+                        <Ellipse Width="12" Height="12" Fill="#FF9800" Margin="0,0,5,0"/>
+                        <Ellipse Width="12" Height="12" Fill="#F44336" Margin="0,0,15,0"/>
+                        <TextBlock Text="💻 Terminal Output" FontSize="18" FontWeight="Bold" 
+                                   Foreground="#1A237E" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <!-- TERMINAL WINDOW -->
+                    <Border Grid.Row="1" CornerRadius="8" Background="#1E1E1E" 
+                            BorderBrush="#333" BorderThickness="1">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black" Direction="270" ShadowDepth="2" Opacity="0.3" BlurRadius="5"/>
+                        </Border.Effect>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" 
+                                      HorizontalScrollBarVisibility="Auto"
+                                      Padding="15">
+                            <TextBox x:Name="txtOutput" IsReadOnly="True" 
+                                     Background="Transparent" Foreground="#00FF41" 
+                                     FontFamily="Consolas" FontSize="13"
+                                     TextWrapping="Wrap" AcceptsReturn="True"
+                                     BorderThickness="0"
+                                     VerticalScrollBarVisibility="Disabled"
+                                     HorizontalScrollBarVisibility="Disabled"/>
+                        </ScrollViewer>
+                    </Border>
+                    
+                    <!-- COMMAND INPUT -->
+                    <Grid Grid.Row="2" Margin="0,15,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Border Grid.Column="0" CornerRadius="8" Background="#F5F5F5" 
+                                BorderBrush="#E0E0E0" BorderThickness="2">
+                            <TextBox x:Name="txtCommand" Background="Transparent" 
+                                     BorderThickness="0" Padding="12,8"
+                                     KeyDown="TxtCommand_KeyDown"
+                                     PreviewKeyDown="TxtCommand_PreviewKeyDown"
+                                     IsEnabled="False"
+                                     FontFamily="Consolas" FontSize="12"/>
+                        </Border>
+                        <Button x:Name="btnSend" Grid.Column="1" Content="📤 Send" 
+                                Click="BtnSend_Click" IsEnabled="False"
+                                Margin="10,0,0,0"
+                                Style="{StaticResource ConnectButton}"/>
+                    </Grid>
+                </Grid>
+            </Border>
+            
+            <!-- ADVANCED COMMAND PANEL -->
+            <Border Grid.Column="2" CornerRadius="15" 
+                    Background="White" Padding="20"
+                    Opacity="0">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="20"/>
+                </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" Direction="270" ShadowDepth="5" Opacity="0.15" BlurRadius="15"/>
+                </Border.Effect>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1" BeginTime="0:0:0.5"/>
+                                <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" 
+                                               From="20" To="0" Duration="0:0:0.8" BeginTime="0:0:0.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- PANEL HEADER -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+                        <Ellipse Width="12" Height="12" Fill="#FF9800" Margin="0,0,5,0"/>
+                        <Ellipse Width="12" Height="12" Fill="#4CAF50" Margin="0,0,5,0"/>
+                        <Ellipse Width="12" Height="12" Fill="#2196F3" Margin="0,0,15,0"/>
+                        <TextBlock Text="⚡ Quick Commands" FontSize="16" FontWeight="Bold" 
+                                   Foreground="#1A237E" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                    <!-- COMMAND TABS -->
+                    <TabControl Grid.Row="1" x:Name="commandTabControl" Background="Transparent" 
+                                BorderThickness="0" IsEnabled="False">
+                        
+                        <!-- SYSTEM TAB -->
+                        <TabItem Header="🖥️ System" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="System Information" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Button Content="📊 Show Version" x:Name="btnShowVersion" 
+                                            Click="BtnQuickCommand_Click" Tag="show version"
+                                            Margin="2" FontSize="10" 
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🕒 Show Clock" x:Name="btnShowClock" 
+                                            Click="BtnQuickCommand_Click" Tag="show clock"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="⏳ Show Uptime" x:Name="btnShowUptime" 
+                                            Click="BtnQuickCommand_Click" Tag="show version | include uptime"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔋 Show Environment" x:Name="btnShowEnv" 
+                                            Click="BtnQuickCommand_Click" Tag="show environment"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🌡️ Temperature" x:Name="btnShowTemp" 
+                                            Click="BtnQuickCommand_Click" Tag="show environment temperature"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="💾 Memory Usage" x:Name="btnShowMemory" 
+                                            Click="BtnQuickCommand_Click" Tag="show memory"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="⚙️ CPU Usage" x:Name="btnShowCpu" 
+                                            Click="BtnQuickCommand_Click" Tag="show processes cpu"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📦 Show Inventory" x:Name="btnShowInventory" 
+                                            Click="BtnQuickCommand_Click" Tag="show inventory"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#39B183" Offset="0"/>
+                                                <GradientStop Color="#2E8B5E" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                        
+                        <!-- NETWORK TAB -->
+                        <TabItem Header="🌐 Network" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="Network Commands" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Button Content="🔗 IP Interface Brief" x:Name="btnShowIPBrief" 
+                                            Click="BtnQuickCommand_Click" Tag="show ip interface brief"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📡 All Interfaces" x:Name="btnShowInterfaces" 
+                                            Click="BtnQuickCommand_Click" Tag="show interfaces"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📊 Interface Status" x:Name="btnShowIntStatus" 
+                                            Click="BtnQuickCommand_Click" Tag="show interfaces status"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🛣️ Routing Table" x:Name="btnShowRoute" 
+                                            Click="BtnQuickCommand_Click" Tag="show ip route"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📋 ARP Table" x:Name="btnShowArp" 
+                                            Click="BtnQuickCommand_Click" Tag="show arp"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔍 MAC Address Table" x:Name="btnShowMac" 
+                                            Click="BtnQuickCommand_Click" Tag="show mac address-table"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📱 CDP Neighbors" x:Name="btnShowCdp" 
+                                            Click="BtnQuickCommand_Click" Tag="show cdp neighbors"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔎 LLDP Neighbors" x:Name="btnShowLldp" 
+                                            Click="BtnQuickCommand_Click" Tag="show lldp neighbors"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#3D7BD6" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                        
+                        <!-- VLAN TAB -->
+                        <TabItem Header="🏷️ VLAN" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="VLAN &amp; Switching" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Button Content="📝 VLAN Brief" x:Name="btnShowVlan" 
+                                            Click="BtnQuickCommand_Click" Tag="show vlan brief"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🌳 Spanning Tree" x:Name="btnShowStp" 
+                                            Click="BtnQuickCommand_Click" Tag="show spanning-tree"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔗 EtherChannel" x:Name="btnShowEtherchannel" 
+                                            Click="BtnQuickCommand_Click" Tag="show etherchannel summary"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="⚡ Port Security" x:Name="btnShowPortSec" 
+                                            Click="BtnQuickCommand_Click" Tag="show port-security"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🏃 VLAN All" x:Name="btnShowVlanAll" 
+                                            Click="BtnQuickCommand_Click" Tag="show vlan"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔄 STP Root" x:Name="btnShowStpRoot" 
+                                            Click="BtnQuickCommand_Click" Tag="show spanning-tree root"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#9C27B0" Offset="0"/>
+                                                <GradientStop Color="#7B1FA2" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                        
+                        <!-- CONFIG TAB -->
+                        <TabItem Header="⚙️ Config" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="Configuration" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Button Content="📜 Running Config" x:Name="btnShowRun" 
+                                            Click="BtnQuickCommand_Click" Tag="show running-config"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="💾 Startup Config" x:Name="btnShowStart" 
+                                            Click="BtnQuickCommand_Click" Tag="show startup-config"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="⚙️ Config Terminal" x:Name="btnConfigT" 
+                                            Click="BtnQuickCommand_Click" Tag="configure terminal"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="💾 Save Config" x:Name="btnSaveConfig" 
+                                            Click="BtnQuickCommand_Click" Tag="copy running-config startup-config"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="✏️ Write Memory" x:Name="btnWriteMemory" 
+                                            Click="BtnQuickCommand_Click" Tag="write memory"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🚪 Exit" x:Name="btnExit" 
+                                            Click="BtnQuickCommand_Click" Tag="exit"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🏁 End" x:Name="btnEnd" 
+                                            Click="BtnQuickCommand_Click" Tag="end"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#4999E9" Offset="0"/>
+                                                <GradientStop Color="#39B183" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                        
+                        <!-- DIAGNOSTIC TAB -->
+                        <TabItem Header="🔧 Debug" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="Diagnostic &amp; Debug" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Button Content="📊 Show Tech" x:Name="btnShowTech" 
+                                            Click="BtnQuickCommand_Click" Tag="show tech-support"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="📝 Show Logging" x:Name="btnShowLog" 
+                                            Click="BtnQuickCommand_Click" Tag="show logging"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="👥 Show Users" x:Name="btnShowUsers" 
+                                            Click="BtnQuickCommand_Click" Tag="show users"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔗 Show Sessions" x:Name="btnShowSessions" 
+                                            Click="BtnQuickCommand_Click" Tag="show sessions"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="💭 Terminal Monitor" x:Name="btnTermMon" 
+                                            Click="BtnQuickCommand_Click" Tag="terminal monitor"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🧹 Clear Counters" x:Name="btnClearCounters" 
+                                            Click="BtnQuickCommand_Click" Tag="clear counters"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🗑️ Clear Logs" x:Name="btnClearLogs" 
+                                            Click="BtnQuickCommand_Click" Tag="clear logging"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#FF5722" Offset="0"/>
+                                                <GradientStop Color="#D84315" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                        
+                        <!-- NETWORK TOOLS TAB -->
+                        <TabItem Header="🛠️ Tools" FontWeight="Bold" FontSize="11">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="5">
+                                <StackPanel>
+                                    <TextBlock Text="Network Tools" FontWeight="Bold" 
+                                               Foreground="#1565C0" Margin="0,0,0,8"/>
+                                    
+                                    <Grid Margin="0,0,0,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <TextBox Grid.Row="0" Grid.Column="0" x:Name="txtPingIP" 
+                                                 Text="8.8.8.8" FontSize="10" Margin="0,0,5,2"/>
+                                        <Button Grid.Row="0" Grid.Column="1" Content="🏓 Ping" 
+                                                x:Name="btnPing" Click="BtnPingTrace_Click" Tag="ping"
+                                                Foreground="White" FontSize="9" Padding="8,4"
+                                                Height="28">
+                                            <Button.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                    <GradientStop Color="#39B183" Offset="0"/>
+                                                    <GradientStop Color="#2E8B5E" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                        
+                                        <TextBox Grid.Row="1" Grid.Column="0" x:Name="txtTraceIP" 
+                                                 Text="8.8.8.8" FontSize="10" Margin="0,2,5,0" Height="28"/>
+                                        <Button Grid.Row="1" Grid.Column="1" Content="🛣️ Trace" 
+                                                x:Name="btnTrace" Click="BtnPingTrace_Click" Tag="traceroute"
+                                                Foreground="White" FontSize="9" Padding="8,4"
+                                                Height="28">
+                                            <Button.Background>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                    <GradientStop Color="#4999E9" Offset="0"/>
+                                                    <GradientStop Color="#3D7BD6" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                        </Button>
+                                    </Grid>
+                                    
+                                    <Button Content="📱 Show Flash" x:Name="btnShowFlash" 
+                                            Click="BtnQuickCommand_Click" Tag="show flash"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#795548" Offset="0"/>
+                                                <GradientStop Color="#5D4037" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🚀 Show Boot" x:Name="btnShowBoot" 
+                                            Click="BtnQuickCommand_Click" Tag="show boot"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#795548" Offset="0"/>
+                                                <GradientStop Color="#5D4037" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button Content="🔄 Reload" x:Name="btnReload" 
+                                            Click="BtnQuickCommand_Click" Tag="reload"
+                                            Margin="2" FontSize="10"
+                                            Height="35" Padding="8,6">
+                                        <Button.Background>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientStop Color="#795548" Offset="0"/>
+                                                <GradientStop Color="#5D4037" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <!-- MODERN STATUS BAR -->
+        <Border Grid.Row="2" Background="White" 
+                BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" 
+                Padding="20,12"
+                Opacity="0">
+            <Border.RenderTransform>
+                <TranslateTransform Y="10"/>
+            </Border.RenderTransform>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.8" BeginTime="0:0:0.6"/>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)" 
+                                           From="10" To="0" Duration="0:0:0.6" BeginTime="0:0:0.6"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Ellipse Width="8" Height="8" Fill="#4CAF50" Margin="0,0,8,0"/>
+                    <TextBlock x:Name="txtStatus" Text="🚀 Ready to connect" 
+                               FontSize="12" FontWeight="SemiBold"
+                               Foreground="#424242" VerticalAlignment="Center"/>
+                </StackPanel>
+                
+                <TextBlock Grid.Column="2" Text="⚡ SwappC v2.0" 
+                           FontSize="11" Foreground="#757575" 
+                           VerticalAlignment="Center" FontWeight="SemiBold"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window> 
